@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  --background-gradient: rgba(000, 000, 000, 0.1), rgba(255, 000, 000, 0.5),
+    rgba(000, 000, 000, 1);
+  --background-form: rgba(255, 255, 255, 0.1);
+  --border-primary: rgba(255, 255, 255, 0.35);
+  --border-secondary: #000;
+  --color-primary: #000;
+  --color-secondary: #fff;
+  --color-tertiary: red;
+}

@@ -1,0 +1,13 @@
+<section class="formContainer">
+  <form class="form" (submit)="submit($event, user.value, pass.value)">
+    <div class="wrapperField">
+      <input type="text" name="" id="user" required #user />
+      <label for="user">Nome</label>
+    </div>
+    <div class="wrapperField">
+      <input type="password" name="" id="password" required #pass />
+      <label for="password">Senha</label>
+    </div>
+    <button type="submit" class="btn-submit">fazer login</button>
+  </form>
+</section>
