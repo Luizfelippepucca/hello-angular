@@ -1,18 +1,16 @@
 import { Component } from '@angular/core';
 
+import { LoginService } from './login.service';
+
 @Component({
   selector: 'login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  submit = function (event: any, user: string, password: string) {
-    event.preventDefault();
+  submit: (event: any, user: string, password: string) => void = () => {};
 
-    if (user !== '' && password !== '') {
-      console.log('logou', { name: user, password: password });
-      return;
-    }
-  };
-  constructor() {}
+  constructor(private loginService: LoginService) {
+    this.submit = this.loginService.submit;
+  }
 }

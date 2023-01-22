@@ -1,12 +1,16 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LoginService {
-  constructor() {}
+  constructor(public router: Router) {}
 
-  getCursos() {
-    return ['React', 'Angurlar', 'vue', 'Flutter'];
-  }
+  submit = (event: any, user: string, password: string) => {
+    event.preventDefault();
+    if (user !== '' && password !== '') {
+      this.router.navigate(['home']);
+    }
+  };
 }

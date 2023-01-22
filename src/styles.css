@@ -3,6 +3,7 @@
 * {
   padding: 0;
   margin: 0;
+  font-family: sans-serif;
   box-sizing: border-box;
   --background-gradient: rgba(000, 000, 000, 0.1), rgba(255, 000, 000, 0.5),
     rgba(000, 000, 000, 1);
