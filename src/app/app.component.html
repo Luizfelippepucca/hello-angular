@@ -1,1 +1,9 @@
-<router-outlet></router-outlet>
+<header class="containerHeader" [class.expandMenu]="aumentaMenu === true">
+  <div (click)="showMenu()">{{ title }}</div>
+  <!-- <nav>
+    <ul>
+      <li><a routerLink="">link</a></li>
+    </ul>
+  </nav> -->
+</header>
+<router-outlet> </router-outlet>

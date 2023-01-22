@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class LoginService {
-  constructor(public router: Router) {}
+  constructor(private router: Router) {}
 
   submit = (event: any, user: string, password: string) => {
     event.preventDefault();

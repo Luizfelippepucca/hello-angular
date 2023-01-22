@@ -1,1 +1,19 @@
-
+.containerHeader {
+  width: 100%;
+  max-width: 80px;
+  background: linear-gradient(45deg, var(--background-gradient));
+  box-shadow: 1px 1px 40px black;
+  height: 100%;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: var(--color-secondary);
+  position: fixed;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.expandMenu {
+  max-width: 300px;
+}
