@@ -1,9 +1,44 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(45deg, var(--background-gradient));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .formContainer {
   width: 100vw;
   height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-400px);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(300px);
+  }
+  75% {
+    opacity: 0.75;
+    transform: translateY(-100px);
+  }
+  85% {
+    opacity: 0.85;
+    transform: translateY(0px);
+  }
+  95% {
+    opacity: 0.95;
+    transform: translateY(-70px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
 
 .form {
@@ -21,6 +56,8 @@
   backdrop-filter: blur(14.7px);
   -webkit-backdrop-filter: blur(14.7px);
   margin: 0px 8px;
+  animation: fadeIn linear 1.4s;
+  transition: 0.3 all;
 }
 .wrapperField {
   width: 100%;
@@ -76,7 +113,7 @@
   cursor: pointer;
   /* border: 2px solid var(--color-tertiary); */
   border: 0;
-  background-color: rgba(245, 6, 6, 0.208);
+  background-color: var(--btn-primary);
   padding: 8px;
   text-align: center;
   outline: none;

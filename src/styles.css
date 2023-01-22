@@ -11,5 +11,6 @@
   --border-secondary: #000;
   --color-primary: #000;
   --color-secondary: #fff;
-  --color-tertiary: red;
+  --color-tertiary: #ff0000;
+  --btn-primary: rgba(245, 6, 6, 0.208);
 }
