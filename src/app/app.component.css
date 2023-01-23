@@ -1,7 +1,7 @@
 .containerHeader {
   width: 100%;
   max-width: 80px;
-  background: linear-gradient(45deg, var(--background-gradient-secondary));
+  background: linear-gradient(240deg, var(--background-gradient));
   box-shadow: 1px 1px 40px black;
   height: 100vh;
   padding: 12px 0px;
@@ -15,6 +15,7 @@
   transition: all 0.5s ease;
   z-index: 4;
 }
+
 .containerHeader .onlyIcon {
   color: var(--color-primary);
   margin: 4px 0px;
