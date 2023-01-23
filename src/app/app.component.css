@@ -1,10 +1,10 @@
 .containerHeader {
   width: 100%;
   max-width: 80px;
-  background: linear-gradient(45deg, var(--background-gradient));
+  background: linear-gradient(45deg, var(--background-gradient-secondary));
   box-shadow: 1px 1px 40px black;
-  height: 100%;
-  padding: 16px;
+  height: 100vh;
+  padding: 12px 0px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -13,7 +13,55 @@
   position: fixed;
   cursor: pointer;
   transition: all 0.5s ease;
+  z-index: 4;
 }
+.containerHeader .onlyIcon {
+  color: var(--color-primary);
+  margin: 4px 0px;
+}
+.containerHeader .onlyIcon:hover {
+  color: var(--color-secondary);
+}
+.containerHeader h5 {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--color-primary);
+}
+.containerHeader h5:hover {
+  color: var(--color-secondary);
+}
+nav {
+  width: 100%;
+  padding: 10px 0px;
+}
+nav ul {
+  list-style: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+ul li {
+  width: 100%;
+  margin: 4px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ul li a {
+  text-decoration: none;
+  width: 100%;
+  color: var(--color-primary);
+  text-align: center;
+  transition: 0.2s all;
+}
+ul li:hover a {
+  background-color: var(--background-primary);
+  color: var(--color-secondary);
+  border-left: 2px solid white;
+}
+
 .expandMenu {
-  max-width: 300px;
+  max-width: 150px;
 }
