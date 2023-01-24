@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Menu } from './menu';
 
 @Component({
@@ -12,8 +13,8 @@ export class AppComponent {
   mostrarMenu = false;
   showOnlyIcons = false;
   itensMenu = [
-    new Menu({ name: 'home', nameComplete: 'Ir para home', link: '/home' }),
-    new Menu({ name: 'sair', nameComplete: 'Sair da aplicação', link: '#' }),
+    new Menu({ name: 'home', nameComplete: 'Home', link: '/home' }),
+    new Menu({ name: 'sair', nameComplete: 'Logout', link: '#' }),
   ];
 
   showMenu = () => {
@@ -21,4 +22,6 @@ export class AppComponent {
     this.showOnlyIcons = !this.showOnlyIcons;
     this.title = this.menuExpand ? 'Fechar menu' : 'Abrir menu';
   };
+
+  constructor(private route: Router) {}
 }

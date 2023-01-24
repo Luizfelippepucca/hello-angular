@@ -151,7 +151,15 @@
   align-self: flex-start;
   transition: 0.1s ease-in all;
 }
-.btn-submit:hover {
+.btn-submit:disabled {
+  background-color: transparent;
+  border: 2px solid var(--border-primary);
+  line-height: 10px;
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.btn-submit:hover:not([disabled]) {
   background-color: transparent;
   border: 2px solid var(--color-primary);
   color: var(--color-primary);

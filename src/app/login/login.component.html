@@ -3,14 +3,27 @@
   <section class="formContainer">
     <form class="form" (submit)="submit($event, user.value, pass.value)">
       <div class="wrapperField">
-        <input type="text" name="" id="user" required #user />
+        <input type="text" name="" id="user" required #user (keyup)="(0)" />
         <label for="user">Nome</label>
       </div>
       <div class="wrapperField">
-        <input type="password" name="" id="password" required #pass />
+        <input
+          type="password"
+          name=""
+          id="password"
+          required
+          #pass
+          (keyup)="(0)"
+        />
         <label for="password">Senha</label>
       </div>
-      <button type="submit" class="btn-submit">fazer login</button>
+      <button
+        type="submit"
+        class="btn-submit"
+        [disabled]="user.value !== '' && pass.value !== '' ? false : true"
+      >
+        fazer login
+      </button>
     </form>
   </section>
 </div>

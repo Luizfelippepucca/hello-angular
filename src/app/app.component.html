@@ -2,14 +2,13 @@
   <div (click)="showMenu()" *ngIf="!menuExpand" class="onlyIcon">
     <i-bs name="arrows-angle-expand" width="25" height="25"> </i-bs>
   </div>
-
   <h5 (click)="showMenu()" *ngIf="menuExpand">
     {{ title }}
   </h5>
   <nav>
     <ul *ngIf="!menuExpand">
       <li>
-        <a routerLink="/home">
+        <a [routerLink]="['home']">
           <i-bs name="house-door" width="25" height="25"> </i-bs>
         </a>
       </li>
