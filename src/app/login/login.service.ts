@@ -10,7 +10,6 @@ export class LoginService {
 
   submit = (event: any, {name,password}:LoginProps) => {
     event.preventDefault();
-    console.log({user:name,senha:password})
     if (name !== '' && password !== '') {
       this.router.navigate(['home']);
     }

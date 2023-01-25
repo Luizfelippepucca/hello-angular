@@ -13,7 +13,7 @@ import { LoginService } from './login.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  person:LoginProps ={
+  person:LoginProps = {
     name: '',
     password:''
 

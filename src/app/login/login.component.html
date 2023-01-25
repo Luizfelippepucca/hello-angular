@@ -3,14 +3,14 @@
   <section class="formContainer">
     <form class="form" (submit)="submit($event,{name:person.name,password:person.password})">
       <div class="wrapperField">
-        <input type="text" name="nome" id="user" required  [(ngModel)]="person.name"
+        <input type="text" name="user" id="user" required  [(ngModel)]="person.name"
        />
         <label for="user">Nome</label>
       </div>
       <div class="wrapperField">
         <input
           type="password"
-          name="senha"
+          name="password"
           id="password"
           required
           [(ngModel)]="person.password"
