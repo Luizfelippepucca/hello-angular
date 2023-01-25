@@ -1,29 +1,31 @@
 <div class="container">
   <h1 class="title">Faça o login para iniciar</h1>
   <section class="formContainer">
-    <form class="form" (submit)="submit($event, user.value, pass.value)">
+    <form class="form" (submit)="submit($event,{user:nome,password:senha})">
       <div class="wrapperField">
-        <input type="text" name="" id="user" required #user (keyup)="(0)" />
+        <input type="text" name="nome" id="user" required  [(ngModel)]="nome"
+       />
         <label for="user">Nome</label>
       </div>
       <div class="wrapperField">
         <input
           type="password"
-          name=""
+          name="senha"
           id="password"
           required
-          #pass
-          (keyup)="(0)"
+          [(ngModel)]="senha"
         />
         <label for="password">Senha</label>
       </div>
       <button
         type="submit"
         class="btn-submit"
-        [disabled]="user.value !== '' && pass.value !== '' ? false : true"
+        [disabled]="nome !== '' && senha !== '' ? false : true"
       >
         fazer login
       </button>
     </form>
   </section>
 </div>
+
+
