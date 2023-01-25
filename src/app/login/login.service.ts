@@ -8,10 +8,10 @@ import { LoginProps } from './login.component';
 export class LoginService {
   constructor(private router: Router) {}
 
-  submit = (event: any, {user,password}:LoginProps) => {
+  submit = (event: any, {name,password}:LoginProps) => {
     event.preventDefault();
-    console.log({user:user,senha:password})
-    if (user !== '' && password !== '') {
+    console.log({user:name,senha:password})
+    if (name !== '' && password !== '') {
       this.router.navigate(['home']);
     }
   };

@@ -1,9 +1,9 @@
 <div class="container">
   <h1 class="title">Faça o login para iniciar</h1>
   <section class="formContainer">
-    <form class="form" (submit)="submit($event,{user:nome,password:senha})">
+    <form class="form" (submit)="submit($event,{name:person.name,password:person.password})">
       <div class="wrapperField">
-        <input type="text" name="nome" id="user" required  [(ngModel)]="nome"
+        <input type="text" name="nome" id="user" required  [(ngModel)]="person.name"
        />
         <label for="user">Nome</label>
       </div>
@@ -13,14 +13,14 @@
           name="senha"
           id="password"
           required
-          [(ngModel)]="senha"
+          [(ngModel)]="person.password"
         />
         <label for="password">Senha</label>
       </div>
       <button
         type="submit"
         class="btn-submit"
-        [disabled]="nome !== '' && senha !== '' ? false : true"
+        [disabled]="person.name !== '' && person.password!== '' ? false : true"
       >
         fazer login
       </button>
