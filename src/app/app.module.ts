@@ -9,11 +9,9 @@ import {
   chevronBarExpand,
   arrowsAngleExpand,
 } from 'ngx-bootstrap-icons';
-import { HomeModule } from './home/home.module';
+
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
-
-
 
 const icons = {
   houseDoor,
@@ -23,13 +21,12 @@ const icons = {
 };
 
 @NgModule({
-  declarations: [AppComponent,LoginComponent],
+  declarations: [AppComponent, LoginComponent],
   providers: [],
   bootstrap: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HomeModule,
     FormsModule,
     NgxBootstrapIconsModule.pick(icons),
   ],
