@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 
 import { LoginService } from './login.service';
 
- export interface LoginProps{
-  name:string;
-  password:string;
- }
+export interface RegisterProps {
+  name: string;
+  lastName: string;
+}
 
 @Component({
   selector: 'app-login',
@@ -13,16 +13,33 @@ import { LoginService } from './login.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  person:LoginProps = {
+  person: RegisterProps = {
     name: '',
-    password:''
-
-  }
-  submit: (event: any,  {name,password}:LoginProps) => void = () => {};
-
+    lastName: '',
+  };
+  step: string = 'name';
+  submit: (event: any, person: RegisterProps) => void = () => {};
+  handleNextStep: (step: string) => void = () => {};
+  handlebacktStep: (step: string) => void = () => {};
 
   constructor(private loginService: LoginService) {
-    this.submit = this.loginService.submit;
+    this.handlebacktStep = (step) => {
+      if (step === 'lastName') {
+        this.step = 'name';
+      }
+    };
+    this.handleNextStep = (step) => {
+      if (step === 'name') {
+        console.log(step);
+        this.step = 'lastName';
+      }
+    };
+    this.submit = (event, person) => {
+      event.preventDefault();
 
+      console.log(person.name);
+
+      return;
+    };
   }
 }

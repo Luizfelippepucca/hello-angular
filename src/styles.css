@@ -1,11 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans:wght@400;700&family=Poppins:ital,wght@0,400;0,600;0,700;1,500&display=swap");
 * {
   padding: 0;
   margin: 0;
-  font-family: sans-serif;
+  /* font-family: "Inter", sans-serif; */
+  /* font-family: "Open Sans", sans-serif; */
+  font-family: "Poppins", sans-serif;
   box-sizing: border-box;
-  --background-gradient: rgba(000, 000, 000, 0.1), rgba(255, 000, 000, 0.5),
+  --background-gradient: rgba(000, 000, 000, 0.9), rgb(204, 22, 22, 0.7),
     rgba(000, 000, 000, 1);
   --background-gradient-secondary: rgba(000, 000, 000, 1),
     rgba(000, 000, 000, 1), rgba(255, 000, 000, 1);
@@ -15,9 +17,9 @@
   --background-secondary: #fff;
   --background-tertiary: #ff0000;
   --color-primary: #000;
-  --color-secondary: #fff;
+  --color-secondary: #8f2828;
   --color-tertiary: #ff0000;
-  --border-primary: rgba(255, 255, 255, 0.35);
+  --border-primary: #8f2828;
   --border-secondary: #000;
-  --btn-primary: rgba(245, 6, 6, 0.208);
+  --btn-primary: #8f2828;
 }

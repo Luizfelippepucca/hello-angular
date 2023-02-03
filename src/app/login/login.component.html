@@ -1,13 +1,31 @@
 <div class="container">
-  <h1 class="title">Faça o login para iniciar</h1>
+  <header class="header">
+    <h1 class="title">Faça seu cadastro</h1>
+  </header>
+
   <section class="formContainer">
-    <form class="form" (submit)="submit($event,{name:person.name,password:person.password})">
-      <div class="wrapperField">
-        <input type="text" name="user" id="user" required  [(ngModel)]="person.name"
-       />
-        <label for="user">Nome</label>
+    <form class="form" (submit)="submit($event, person)" [ngSwitch]="step">
+      <div class="wrapperField" *ngSwitchCase="'name'">
+        <input
+          type="text"
+          name="user"
+          id="anme"
+          required
+          [(ngModel)]="person.name"
+        />
+        <label for="name">Nome</label>
       </div>
-      <div class="wrapperField">
+      <div class="wrapperField" *ngSwitchCase="'lastName'">
+        <input
+          type="text"
+          name="user"
+          id="lastName"
+          required
+          [(ngModel)]="person.lastName"
+        />
+        <label for="lastName">Sobrenome</label>
+      </div>
+      <!-- <div class="wrapperField">
         <input
           type="password"
           name="password"
@@ -16,16 +34,31 @@
           [(ngModel)]="person.password"
         />
         <label for="password">Senha</label>
+      </div> -->
+      <div class="wrapperBtn">
+        <button
+          type="button"
+          class="btn-submit"
+          *ngIf="step !== 'name'"
+          (click)="handlebacktStep(step)"
+        >
+          voltar
+        </button>
+        <button *ngIf="step === 'finish'" type="submit" class="btn-submit">
+          enviar
+        </button>
+        <button
+          *ngIf="step !== 'finish'"
+          type="button"
+          class="btn-submit"
+          (click)="handleNextStep(step)"
+          [disabled]="
+            person.name !== '' && person.name.length >= 4 ? false : true
+          "
+        >
+          proximo
+        </button>
       </div>
-      <button
-        type="submit"
-        class="btn-submit"
-        [disabled]="person.name !== '' && person.password!== '' ? false : true"
-      >
-        fazer login
-      </button>
     </form>
   </section>
 </div>
-
-

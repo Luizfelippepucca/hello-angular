@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoginProps } from './login.component';
+import { RegisterProps } from './login.component';
 
 @Injectable({
   providedIn: 'root',
@@ -8,10 +8,7 @@ import { LoginProps } from './login.component';
 export class LoginService {
   constructor(private router: Router) {}
 
-  submit = (event: any, {name,password}:LoginProps) => {
-    event.preventDefault();
-    if (name !== '' && password !== '') {
-      this.router.navigate(['home']);
-    }
+  submit = () => {
+    console.log('clicou');
   };
 }
