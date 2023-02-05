@@ -1,6 +1,8 @@
 <div class="container">
   <header class="header">
-    <h1 class="title">Faça seu cadastro</h1>
+    <h1 class="title">
+      {{ step !== "finish" ? "Faça seu cadastro" : "Confirme seus dados" }}
+    </h1>
   </header>
 
   <section class="formContainer">
@@ -9,9 +11,10 @@
         <input
           type="text"
           name="user"
-          id="anme"
+          id="name"
           required
           [(ngModel)]="person.name"
+          (keyup)="handleChange(step)"
         />
         <label for="name">Nome</label>
       </div>
@@ -22,20 +25,87 @@
           id="lastName"
           required
           [(ngModel)]="person.lastName"
+          (keyup)="handleChange(step)"
         />
         <label for="lastName">Sobrenome</label>
       </div>
-      <!-- <div class="wrapperField">
+      <div class="wrapperField" *ngSwitchCase="'email'">
         <input
-          type="password"
-          name="password"
+          type="mail"
+          name="name"
+          id="email"
+          required
+          [(ngModel)]="person.email"
+          (keyup)="handleChange(step)"
+        />
+        <label for="email">E-mail</label>
+      </div>
+      <div class="wrapperField" *ngSwitchCase="'password'">
+        <input
+          [type]="showPass ? 'text' : 'password'"
+          name="name"
           id="password"
           required
           [(ngModel)]="person.password"
+          (keyup)="handleChange(step)"
         />
         <label for="password">Senha</label>
-      </div> -->
-      <div class="wrapperBtn">
+        <i-bs
+          name="eye-slash"
+          class="iconEyeSlash"
+          width="30"
+          height="30"
+          (click)="showPassword()"
+          *ngIf="showPass"
+        >
+        </i-bs>
+        <i-bs
+          name="eye"
+          width="30"
+          height="30"
+          class="iconEyeSlash"
+          (click)="showPassword()"
+          *ngIf="!showPass"
+        >
+        </i-bs>
+      </div>
+      <div class="wrapperField" *ngSwitchCase="'confirmPassword'">
+        <input
+          [type]="showPass ? 'text' : 'password'"
+          name="name"
+          id="confirmPassword"
+          required
+          [(ngModel)]="person.confirmPassword"
+          (keyup)="handleChange(step)"
+        />
+        <label for="confirmPassword">Confirmar senha</label>
+        <i-bs
+          name="eye-slash"
+          class="iconEyeSlash"
+          width="30"
+          height="30"
+          (click)="showPassword()"
+          *ngIf="showPass"
+        >
+        </i-bs>
+        <i-bs
+          name="eye"
+          width="30"
+          height="30"
+          class="iconEyeSlash"
+          (click)="showPassword()"
+          *ngIf="!showPass"
+        >
+        </i-bs>
+      </div>
+      <div class="wrapperFinishData" *ngSwitchCase="'finish'">
+        <div>nome: {{ person.name }}</div>
+        <div>sobrenome: {{ person.lastName }}</div>
+        <div>e-mail: {{ person.email }}</div>
+        <div>senha: {{ person.password }}</div>
+      </div>
+
+      <div [class]="step !== 'finish' ? 'wrapperBtn' : 'wrapperBtnFinish'">
         <button
           type="button"
           class="btn-submit"
@@ -52,9 +122,7 @@
           type="button"
           class="btn-submit"
           (click)="handleNextStep(step)"
-          [disabled]="
-            person.name !== '' && person.name.length >= 4 ? false : true
-          "
+          [disabled]="enableBnt"
         >
           proximo
         </button>

@@ -8,6 +8,8 @@ import {
   boxArrowInLeft,
   chevronBarExpand,
   arrowsAngleExpand,
+  eyeSlash,
+  eye,
 } from 'ngx-bootstrap-icons';
 
 import { FormsModule } from '@angular/forms';
@@ -18,6 +20,8 @@ const icons = {
   boxArrowInLeft,
   chevronBarExpand,
   arrowsAngleExpand,
+  eyeSlash,
+  eye,
 };
 
 @NgModule({
