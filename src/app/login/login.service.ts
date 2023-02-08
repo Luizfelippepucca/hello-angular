@@ -1,14 +1,18 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
+
 import { RegisterProps } from './login.component';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LoginService {
-  constructor(private router: Router) {}
+  constructor() {}
 
-  submit = () => {
-    console.log('clicou');
+  submit = (event: any, person: RegisterProps) => {
+    event.preventDefault();
+
+    console.log(person);
+
+    return;
   };
 }

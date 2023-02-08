@@ -119,13 +119,7 @@ export class LoginComponent {
       }
     };
 
-    this.submit = (event, person) => {
-      event.preventDefault();
-
-      console.log(person);
-
-      return;
-    };
+    this.submit = this.loginService.submit;
 
     this.handleChange = (step) => {
       const emailRegex =
@@ -170,7 +164,8 @@ export class LoginComponent {
       if (
         step === 'confirmPassword' &&
         this.person.confirmPassword !== '' &&
-        this.person.confirmPassword.length >= 6
+        this.person.confirmPassword.length >= 6 &&
+        this.person.confirmPassword === this.person.password
       ) {
         this.enableBnt = false;
         return;
